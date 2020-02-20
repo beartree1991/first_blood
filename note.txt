@@ -70,3 +70,28 @@ Cortex-M内核及其设备文件(Include文件夹)，微控制器专用头文件
 容，而不是直接从寄存器中拷贝内容。
 
 /*HAL_Delay()陷入死循环*/
+
+/*debug配置文件launch.json*/
+{
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "jlink",
+            "cwd":"${workspaceRoot}",
+            "executable": "${workspaceRoot}/.pio/build/genericSTM32F103ZE/firmware.elf",
+            "name": "Debug (J-Link)",
+            "device": "STM32F103ZE",
+            "interface": "jtag"
+        },
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "openocd",
+            "cwd":"${workspaceRoot}",
+            "executable": "${workspaceRoot}/.pio/build/genericSTM32F103ZE/firmware.elf",
+            "name": "Debug (OpenOCD)",
+            "device": "STM32F103ZE",
+            "configFiles": [
+                "interface/jlink.cfg",
+                "target/stm32f1x.cfg"
+            ]
+        },
