@@ -31,10 +31,10 @@ int main(void)
 	while(1)
 	{
 		HAL_GPIO_WritePin(LED1_GPIO,LED1_PIN,GPIO_PIN_RESET); 
-		delay_ms(150);
+		delay_ms(20);
 		HAL_GPIO_WritePin(LED1_GPIO,LED1_PIN,GPIO_PIN_SET);
 		HAL_GPIO_WritePin(LED0_GPIO,LED0_PIN,GPIO_PIN_RESET);
-		delay_ms(150);
+		delay_ms(40);
 		HAL_GPIO_WritePin(LED0_GPIO,LED0_PIN,GPIO_PIN_SET);
 	}
 }
